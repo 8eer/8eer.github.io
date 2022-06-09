@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wall | Puly</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+            body{
+                font-family: 'Roboto Mono', monospace;
+                color: white;
+                background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fc.wallhere.com%2Fphotos%2Ff8%2F37%2Fgalaxy_space_stars_Hubble_Deep_Field-1790559.jpg!d&f=1&nofb=1');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 100%;
+            }
+            table td{
+                padding-inline-end: 20px;
+            }
+            a:hover{
+                font-style: oblique;
+            }
+            a{
+                color: rebeccapurple
+            }
+            .column {
+            float: left;
+            width: 27%; 
+            margin-inline-end: 5%;
+
+            }
+
+            .row {
+                padding-bottom: 1%;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+            h2{
+                text-decoration: underline;
+            }
+            img{
+                width: 100%;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            table, th, td {
+            border:1px solid black;
+            border-color:grey;
+            }
+        </style>
+    </head>
+    <body style="background-color: black;">
+        <pre>
+            <strong style="font-size:20px;text-align:center;color:white">
+            .----.                 _       _                     _ _
+.---------. | == |     _ __  _   _| |_   _( )___  __      ____ _| | |
+|.-"""""-.| |----|    | '_ \| | | | | | | |// __| \ \ /\ / / _` | | |
+||       || | == |    | |_) | |_| | | |_| | \__ \  \ V  V / (_| | | |
+||       || |----|    | .__/ \__,_|_|\__, | |___/   \_/\_/ \__,_|_|_| 
+|'-.....-'| |::::|    |_|            |___/
+`"")---(""` |___.|
+
+Prepare to read some real stupid shit
+----------------------------------------------------------------------------------------------------------
+            </strong>
+        </pre>
+
+        <h1><a href="/wall">HOME</a></h1>
+        <h2>LETTER TO THE FELLOW SELF-HOSTER</h2>
+        <h3>Hi and congrats for choosing self-hosting and furthering the descentralization of internet data, here are some tips I have for you:</h3>
+        <h3>1. Recycle recycle recycle: most old tech can easily serve as proper server, all a server is is a computer that usually is always on and usually serves data over a connection, usually the internet, so basically any electronic can fit this description, you'll def have the easiest time with old laptops and computers, you 100% have one and you can 100% use them as your server, just install some linux distro, nginx if you want a website, and you're basically done!</h3>
+        <h3>2. Way out of DNS hell: most ISPs charge extra for static IPs, that is public IP adresses that never change so you can more easily tie a domain to that, domains also cost quite a bit per year espacially if you rent them without having a multiple year long contract, you can easily solve this using second level domain providers, I reccomend duckdns bacause they're fully open source, free as in free beer and have a great API, all domains you get from them will end in `.duckdns.org` so thats unfortunate but other than that its great! I also reccomend now-dns, they're not open source or as community-centered as duckdns, but they have better domain extensions (.mypi.co and .ownip.net are personal favourites, but they have a fuckton of other endings), they're also free as in free beer and have a equally great API, once you grab a domain simply write a cron script that runs every day or every 2-3 hours that does an API call and updates the domain IP record in case your IP changes</h3>
+        <h3>3. Free (trusted!!) SSL certificates: <a href="https://letsencrypt.org/">Letsencrypt</a> (bless their hearts) are a non-profit organisation that acts as a trusted CA and provides free SSL certificates to anyone without any catches or trials or accounts or anything, they just do charity work for helping secure the web, you can acces their services easily on most distros using certbot, a tool that makes fetching and installing certificates to either nginx or apache trivial, click on the little lock next to the url on your browser then learn more, my domain is also secured by a letsencrypt cert, they're truly great</h3>
+        <h3>4. Host your friends too!: you can get multiple domains and configure nginx/apache to point to a different webroot depending on the url that is used to request the page, so that means you can host multiple websites on the same server, I reccomend making user accounts for your friends and hosting their personal websites as well, help them with free hosting and be a good friend, I usually just charge one beer for the hosting as a joke</h3>
+        <h3>5. Call upon the amazing tech community: most people will gladly help you with any issues regarding setting up a homeserver, myself included, email/dm me for any help you need!</h3>
+
+    </body>
+</html>

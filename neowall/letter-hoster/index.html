@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Puly | ネオウォール
+        </title>
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            @import url(/neowall/dist.css);
+        </style>
+    </head>
+
+    <body>
+        <div class="max-w-[100%] md:max-w-[40%]">
+            
+
+            <p class="title">Letter to the fellow self-hoster</p>
+            <p class="pause line">----------------------------------------------------------------------------------------------------------------------------------</p>
+
+			<p class="pause">Hi and congrats for choosing self-hosting and furthering the descentralization of internet data, here are some tips I have for you:</p>
+            <p class="pause">1. Recycle recycle recycle: most old tech can easily serve as proper server, all a server is is a computer that usually is always on and usually serves data over a connection, usually the internet, so basically any electronic can fit this description, you'll def have the easiest time with old laptops and computers, you 100% have one and you can 100% use them as your server, just install some linux distro, nginx if you want a website, and you're basically done!</p>
+            <p class="pause">2. Way out of DNS hell: most ISPs charge extra for static IPs, that is public IP adresses that never change so you can more easily tie a domain to that, domains also cost quite a bit per year espacially if you rent them without having a multiple year long contract, you can easily solve this using second level domain providers, I reccomend duckdns bacause they're fully open source, free as in free beer and have a great API, all domains you get from them will end in `.duckdns.org` so thats unfortunate but other than that its great! I also reccomend <a href="https://freedns.afraid.org" class="content">[afraid dns]</a>, they don't have wildcard subdomain redirect, but they have FAR better domain extensions (.us.to and .uk.to are personal favourites, but they have a fuckton of other endings), they're also free as in free beer and have a equally great API, once you grab a domain simply write a cron script that runs every day or every 2-3 hours that does an API call and updates the domain IP record in case your IP changes</p>
+            <p class="pause">3. Free (trusted!!) SSL certificates: <a href="https://letsencrypt.org" class="content">letsencrypt</a> (bless their hearts) are a non-profit organisation that acts as a trusted CA and provides free SSL certificates to anyone without any catches or trials or accounts or anything, they just do charity work for helping secure the web, you can acces their services easily on most distros using certbot, a tool that makes fetching and installing certificates to either nginx or apache trivial, click on the little lock next to the url on your browser then learn more, my domain is also secured by a letsencrypt cert, they're truly great</p>
+            <p class="pause">4. Host your friends too!: you can get multiple domains and configure nginx/apache to point to a different webroot depending on the url that is used to request the page, so that means you can host multiple websites on the same server, I reccomend making user accounts for your friends and hosting their personal websites as well, help them with free hosting and be a good friend, I usually just charge one beer for the hosting as a joke</p>
+            <p class="pause">5. Call upon the amazing tech community: most people will gladly help you with any issues regarding setting up a homeserver, myself included, email/dm me for any help you need!</p>
+
+            <p class="line">----------------------------------------------------------------------------------------------------------------------------------</p>
+			<a href="../">[back]</a>
+        </div>
+    </body>
+</html>

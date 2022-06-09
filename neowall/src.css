@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Rubik&family=Rubik+Mono+One&display=swap');
+
+body{
+    /*background-color: #0f1214;*/
+    background-color: #050812;
+    color: white;
+    font-family: 'Fira Code', 'monospace';
+    margin-top: 4%;
+    margin-bottom: 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+    letter-spacing: 0;
+    font-weight: 500;
+    font-style: normal;
+	overflow-wrap: break-word;
+    line-height: 1.5;
+    max-width: 200vh;
+}
+
+p.title{
+    color: white;
+    line-height: 1.5;
+}
+
+p.subtitle{
+    text-decoration: underline;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.subtitlewnu{
+    padding-bottom: 10px;
+    color: white;
+}
+
+p{
+    font-weight: 400;
+    line-height: 1.6em;
+    color: lightgray;
+    
+}
+
+p.pause{
+    margin-bottom: 50px;
+}
+
+p.line{
+	color: #555555;
+	text-overflow: hidden;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+a.content{
+    color: lightskyblue;
+}
+
+a.article{
+    text-decoration: dotted;
+    font-weight: 400;
+    color: lightgray;
+}
+
+li{
+    margin-bottom: 7px;
+}
+
+img{
+    margin-bottom: 50px;
+}
+
+
+
+@layer components{
+	p{
+		@apply text-sm md:text-base;
+	}
+	
+	a{
+		@apply text-sm md:text-base;
+	}
+
+	p.title{
+		@apply text-6xl md:text-[3.5em];
+	}
+
+	p.subtitle{
+		@apply text-2xl md:text-[1.6em];
+	}
+
+	.subtitlewnu{
+		@apply text-2xl md:text-[1.6em];
+	}
+
+    img{
+        @apply rounded-xl;
+    }
+
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			PGP Encryptor
+		</title>
+	</head>
+
+	<body>
+		<p style="font-size: 100px;">PGP Encryptor</p>
+		<textarea id="unenc" rows="20" cols="100" name="Unenc" placeholder="Enter the text you want to encrypt here!"></textarea>
+
+		<button type="button" style="font-size: 40px" id="buton-enc">Encrypt!</button>
+		<button type="button" style="font-size: 40px" id="buton-clr">Clear</button>
+		<p>The JS on this website is fully free and libre and uses <a href="https://openpgpjs.org/">openpgp.js</a>, you can find my part of the code (like 3 lines copy pasted from the documentation) in the website source tarball <a href="/Files/website-source-code.tar.gz">here</a></p>
+	</body>
+
+
+	
+	<script src="openpgp.min.js"></script>
+	<script>
+		
+		var encract = document.getElementById("buton-enc")
+		var clsbut = document.getElementById("buton-clr")
+		var jtextbox = document.getElementById("unenc")
+		console.log(jtextbox.value)
+
+
+		const pubKeyArmored = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+xsBNBGG5A0ABCAClEy3cpBn2nGIKzwGhYnyrFDjNVFwhDaBZgWqDtO/GcxkZFqo8
+dqUgSGCOgSwV8vJSyppCc1JJPIBXqzodvCfQzwoQ30vDCnI8T4n03DzE2gnAewpe
+B6PPCUPfo+tL4o0V2K6hjbn90vQojUbgzQ7UBzgauw5IQOel/yGDd6oSlQfFFCvA
+DTiEdp9uyk9SIb1bHc46QdjQbIwkIj03wdxY/PSCbkm+RA4w28CyuKr3O5yIEYVP
+4GwlheJk9zWoO4VmuVPQwf024ImnF1o0h3SXIv/A0N4tFxTcZCdca/s9fXSlz5jM
+YCl/zKW9xcYEC5XdU+/NsNBjvNu0JXS4SzCrABEBAAHNJklvYWNoaW0gUmFkdSA8
+aW9hY2hpbS5yYWR1QGljbG91ZC5jb20+wsCOBBMBCAA4FiEEwkYtUQP6YFnh4yec
+npKZzZbGXsYFAmG5A0ACGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQnpKZ
+zZbGXsYe9wgAjNrp5kAoFPKF3r6E40LCrKMxy96WyAV1s7FT+S41K2zz9PrOx7Ru
+Lzsla8T6oqjZA2X/0otoo3iPRwRiU5D2gnAyfJd5AQxTgIDbpt/cc06OtEbDkQJq
+j8GYFxBuOwwLDYc+wlN/aPCL+abzeAQdIWM5EFOCBIWO/s8821iLYPz2b78/Pp4i
+ojlzQWQ2vMnErtLrMF9f8XPByA3PX/NwwONBWTx0DMFxrR/Am50113gPJqaDUX4s
+otsPsOAK5mKMB3fbkeH3eOoOAKWuWwhAH1ao0wT0jebRDafoRRN0Bf+54Jog2ZUu
+c0TjUTeh8btOu64h+71USOLrBTwkOyD00s7ATQRhuQNAAQgA0ijP9kk+6RIceDhT
+hyT6EELGG3v8kTy04rL4DNncYjAyxaDkPJxZSKKlv9/J+FS7YEdxd7Xn+Fb/F13x
+qyZPFMcybZDj+ltY6LjnUinRz7Gwj0qb7QmBJbtwRUFJDcG4WkMof3uqe01TbkCr
+mS2EGj4mZONUu5p5Edb27NIOEEHydRPPirJVEFL56t6JHd8djpaSkX7M+kxCIk85
+ax/jKr3h+1674QwO1N66wFAq9uqFXgniy47/rEYncAQCPJUweExEs7tTCLUvEiYR
+Lvkk876hY9wiN9tAsJKl+NuE/Zs1jBHwbbvb6BfM68Xk5qGvx5ePsoKV0hTI8d0L
+n+uSOQARAQABwsB2BBgBCAAgFiEEwkYtUQP6YFnh4yecnpKZzZbGXsYFAmG5A0AC
+GwwACgkQnpKZzZbGXsbptQf/V44w/mYYyo9XtEB8SW8/98rrWlWZtqzAJRnsEjyD
+zxp8UU/sQ62tuq//Z0BRvyynNUB8fjMRm0024ZV5RrKw39PIPQX2uvjugLfQPx1E
+aI7jSYcmZxYMT8R/RMZy9gzM7r9W4uqFi5ol8uScEQ7XpsGaaTIu1aMJ6YnCFbB4
+r9uA34GIoekqKy37+Z9Bxes5jB+Jf+QdA6Ia7nIXl9vAPeslRuL2vLZFyTiddvpL
+krYkRW9/UvekuW6Z6rVBLGiM8PYo6sSYmWJYPQWR0M73xAQnLdixKeXw+ElJ4vGh
+b+UGxqvsRC7uvLbabxJcA1MHgQJfSNgxX8eh+gLlCtAoKA==
+=CAYR
+-----END PGP PUBLIC KEY BLOCK-----`
+
+		
+
+		encract.addEventListener('click', function(event) {
+			(async () => {
+
+				
+				const publicKey = await openpgp.readKey({ armoredKey: pubKeyArmored });
+
+				console.log("enc");
+				const encrypted = await openpgp.encrypt({
+					message: await openpgp.createMessage({ text: jtextbox.value }), // input as Message object
+					encryptionKeys: publicKey
+				});
+
+				jtextbox.value = encrypted;
+			})();
+		})
+
+		clsbut.addEventListener('click', function(event){
+			jtextbox.value = "";
+		})
+
+	</script>
+</html>
